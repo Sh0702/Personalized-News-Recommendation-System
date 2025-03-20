@@ -1,5 +1,14 @@
 import streamlit as st
 from langchain.llms import OpenAI
+import subprocess
+
+# Install dependencies
+def install_requirements():
+    requirements = ["streamlit", "pandas", "numpy", "requests"]
+    for package in requirements:
+        subprocess.run(["pip", "install", package], check=True)
+
+install_requirements()
 
 st.title('🦜🔗 Quickstart App')
 
