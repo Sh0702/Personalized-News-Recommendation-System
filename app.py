@@ -12,7 +12,7 @@ install_requirements()
 
 st.title('🦜🔗 Quickstart App')
 
-openai_api_key = st.sidebar.text_input('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')
+openai_api_key = st.text_input('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')
 
 def generate_response(input_text):
   llm = OpenAI(temperature=0.7, openai_api_key=openai_api_key)
