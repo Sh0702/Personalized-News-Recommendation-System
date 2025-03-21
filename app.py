@@ -9,8 +9,6 @@ import openai
 def install_requirements():
     if os.path.exists("requirements.txt"):
         subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
-    subprocess.run(["pip", "install", "--upgrade", "langchain"], check=True)
-    subprocess.run(["pip", "install", "lanchain_community"], check=True)
 install_requirements()
 
 # Load environment variables from .env file
