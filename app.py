@@ -1,43 +1,22 @@
 import streamlit as st
-from langchain.llms import OpenAI
-import os
-import subprocess
-from dotenv import load_dotenv
-import openai
+import logging
+from datetime import datetime
+from langchain_agent import agent, search_news
 
-# Install dependencies from requirements.txt
-def install_requirements():
-    if os.path.exists("requirements.txt"):
-        subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
-install_requirements()
+st.title("📰 ReAct-based Personalized News Generator")
 
-# Load environment variables from .env file
-load_dotenv()
+user_query = st.text_input("What do you want news about?")
 
-# Retrieve OpenAI API Key from .env file
-openai_api_key = os.getenv("OPENAI_API_KEY")
+if st.button("Generate"):
+    if user_query:
+        with st.spinner("Thinking..."):
+            try:
+                result = agent.run(user_query)
+                st.success(result)
 
-# Set the OpenAI API Key in the environment for langchain/openai to use
-if openai_api_key:
-    os.environ["OPENAI_API_KEY"] = openai_api_key
-    openai.api_key = openai_api_key
+                # Logging for manual observability
+                with open("logs.csv", "a") as log:
+                    log.write(f"{datetime.now()},{user_query},{result}\n")
 
-st.title('🦜🔗 Quickstart App')
-
-def generate_response(input_text):
-    try:
-        llm = OpenAI(temperature=0.7)
-        response = llm(input_text)
-        st.info(response)
-    except Exception as e:
-        st.error(f"Error generating response: {e}")
-
-with st.form('my_form'):
-    text = st.text_area('Enter text:', 'Will RCB win the IPL 2025?')
-    submitted = st.form_submit_button('Submit')
-
-    if not openai_api_key or not openai_api_key.startswith('sk-'):
-        st.warning('Please enter a valid OpenAI API key in the .env file!', icon='⚠')
-
-    if submitted and openai_api_key and openai_api_key.startswith('sk-'):
-        generate_response(text)
+            except Exception as e:
+                st.error(f"Error: {e}")
