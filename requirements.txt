@@ -1,5 +1,13 @@
-streamlit 
-openai==1.68.2
-langchain==0.3.21
-langchain_community==0.3.20
-python-dotenv
+# streamlit 
+# openai==1.68.2
+# langchain==0.3.21
+# langchain_community==0.3.20
+# python-dotenv
+
+fastapi 
+uvicorn 
+sqlalchemy 
+psycopg2-binary 
+python-dotenv 
+bcrypt 
+PyJWT
