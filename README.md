@@ -1,17 +1,34 @@
-# Personalized-News-Recommendation-System
+# 📰 Personalized News Recommendation System
 
-What this application provides
+This project is an end-to-end AI-powered application that delivers personalized news content based on user queries and interests. It combines vector search, large language models, and modern full-stack development for a responsive and intelligent user experience.
 
-1. News articles based on content preferences based on prompts.
+---
 
-USP
+## 🚀 Features
 
-1. This provides summaries and detailed articles through parsing of multiple articles on the topic across the internet.
-2. We will exploit the power of LLMs to reason and search and summarize large documents.
-3. InShorts aggregates and distributes content for users to read in less than a minute.
-4. BlinkList provides summaries of books to read in 15 minutes.
-5. Our product will be able to provide summaries like BlinkList and also detailed articles if required.
-6. How this is different from other apps is that user can interact with the app and reason with the generated articles to get specific content.
-7. This application iterates across multiple articles and will be able to cite the sources from which it is generated.
+- 🔐 **User Authentication** using JWT (FastAPI + PostgreSQL)
+- 🔎 **Vector Search** with Weaviate for private document retrieval
+- 🌐 **Public News Fallback** using NewsAPI
+- 🧠 **Text Generation** using Hugging Face's LLaMA (`huggyllama/llama-7b`)
+- 💬 **Contextual Reasoning** via ReAct-style prompt engineering
+- 🖥️ **React Frontend** for signup, login, and querying
+- 🧠 **Auto-caching** of new content from public to private DB
 
-Will update rest later
+---
+
+## 🧱 Tech Stack
+
+| Layer        | Tools & Libraries                                       |
+|--------------|---------------------------------------------------------|
+| Frontend     | React, Axios, React Router                              |
+| Backend      | FastAPI, SQLAlchemy, PostgreSQL, JWT, Uvicorn           |
+| LLM          | Hugging Face Transformers, `huggyllama/llama-7b`        |
+| Retrieval    | Weaviate (Docker + `sentence-transformers`)             |
+| Public News  | [NewsAPI.org](https://newsapi.org)                      |
+| Infrastructure | Docker Compose (for Weaviate), `.env` for secrets    |
+
+---
+
+## 📂 Project Structure
+
+
