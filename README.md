@@ -14,4 +14,4 @@ USP
 6. How this is different from other apps is that user can interact with the app and reason with the generated articles to get specific content.
 7. This application iterates across multiple articles and will be able to cite the sources from which it is generated.
 
-Will update rest later
+Streamlit App link: https://personalized-news-recommendation-system-2307.streamlit.app/
