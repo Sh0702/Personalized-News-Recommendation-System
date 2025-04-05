@@ -1,17 +1,11 @@
-from fastapi import Depends, HTTPException, status
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from auth.utils import decode_token
+from fastapi import FastAPI, Body
+from llm.llama_pipeline import generate_news_summary
 
-security = HTTPBearer()
+app = FastAPI()
 
-@app.post("/generate_news")
-def generate_news(query: dict, credentials: HTTPAuthorizationCredentials = Depends(security)):
-    try:
-        token_data = decode_token(credentials.credentials)
-        # Later: run retrieval + react + generation here
-        return {
-            "summary": f"Personalized news for query: {query['query']}",
-            "explanation": "This was generated using private + public retrieval based on your interests."
-        }
-    except:
-        raise HTTPException(status_code=401, detail="Invalid token")
+@app.post("/generate")
+def generate(data: dict = Body(...)):
+    query = data.get("query")
+    context = data.get("context", "")
+    result = generate_news_summary(query, context)
+    return {"response": result}
