@@ -18,8 +18,6 @@ if st.button("Generate"):
 
                 result = llm.invoke(injected_prompt)
                 
-                # result = agent.run(user_query)
-                
                 st.success(result.content)
 
                 # Logging for manual observability

@@ -16,4 +16,4 @@ def search_news(query: str) -> str:
     response = requests.get(url, params=params)
     
     articles = response.json().get("results", [])
-    return "<article separator>".join([f"{a['title']} - {a['content']}" for a in articles])
+    return "\n<article separator>\n".join([f"{a['title']} - {a['description']}" for a in articles])
