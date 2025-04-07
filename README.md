@@ -1,5 +1,7 @@
 # Personalized-News-Recommendation-System
 
+App link: https://personalized-news-recommendation-system.streamlit.app/
+
 What this application provides
 
 1. News articles based on content preferences based on prompts.
