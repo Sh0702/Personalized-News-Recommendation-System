@@ -2,7 +2,7 @@ import streamlit as st
 import logging
 from datetime import datetime
 from langchain_agent import llm, prompt_template
-from news_search_tool import search_news
+from news_search_tool import search_newsdata
 
 st.title("📰 ReAct-based Personalized News Generator")
 
@@ -12,7 +12,7 @@ if st.button("Generate"):
     if user_query:
         with st.spinner("Thinking..."):
             try:
-                news_data = search_news(user_query)
+                news_data = search_newsdata(user_query)
 
                 injected_prompt = prompt_template.invoke({"topic": user_query, "article": news_data})
 
