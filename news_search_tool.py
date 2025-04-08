@@ -1,7 +1,6 @@
 from langchain.tools import tool
 import requests
-import os
-
+import streamlit as st
 @tool
 def search_news(query: str) -> str:
     """Search for recent news related to the input query."""
@@ -11,7 +10,7 @@ def search_news(query: str) -> str:
         "q": query,
         "language": "en",
         "size": 3,
-        "apikey": os.getenv("NEWS_API_KEY")
+        "apikey": st.secrets["NEWS_API_KEY"]
     }
     response = requests.get(url, params=params)
     
