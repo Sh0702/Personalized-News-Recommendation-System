@@ -22,7 +22,7 @@ llm = init_chat_model("llama3-8b-8192", model_provider="groq")
 
 #     If the articles are not related return : "Articles not relevant to topic"
 #     Answer:''')
-prompt '''
+prompt = '''
     Gather a list of newss articles related to topic: {topic}.
     Compile the information from these articles and give a summary of the description in terms of different perspectives. Once this is done, cite the articles referred through the following
     {article}
@@ -33,5 +33,6 @@ prompt '''
     Summary: <summary>
 
     If the articles are not related return : "Articles not relevant to topic"
+    Answer:
 '''
 prompt_template = PromptTemplate.from_template(prompt)
