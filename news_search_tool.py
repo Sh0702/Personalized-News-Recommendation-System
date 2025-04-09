@@ -6,13 +6,20 @@ import streamlit as st
 
 def search_newsdata(query: str) -> str:
     """Search for recent news related to the input query."""
-    url = "https://newsdata.io/api/1/news"
+    # url = "https://newsdata.io/api/1/news"
     
+    # params = {
+    #     "q": query,
+    #     "language": "en",
+    #     "size": 5,
+    #     "apikey": st.secrets["NEWS_DATA_KEY"]
+    # }
+    url = "https://gnews.io/api/v4/search"
     params = {
         "q": query,
-        "language": "en",
-        "size": 5,
-        "apikey": st.secrets["NEWS_DATA_KEY"]
+        "token": st.secrets["GNEWS_API_KEY"],
+        "lang": "en",
+        "max": 5
     }
     response = requests.get(url, params=params)
     
