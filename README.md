@@ -25,14 +25,14 @@ A lightweight and scalable AI-powered system designed to generate personalized n
 ## 🧠 Proposed Solutions
 
 1. 🔍 **Explore advanced architectures** that improve personalization and relevance, such as:
-   - **RAG pipelines** with vector stores (e.g., Weaviate, FAISS).
-   - Fine-tuned LLMs using topic-clustered and quality-controlled datasets.
-   - ReAct-style prompting or Structured Chain of Thought (SCOT) for coherent generation.
+   - Planner in decomposing and managing specific tasks
+   - Memory mechanisms that enable context retentions and iterative learning
+   - Integration of specialized tool sets that extend specific capabilities
 
 2. 📦 Build a **custom data pipeline** to:
-   - Aggregate diverse news sources (RSS feeds, APIs, scraping if permitted).
-   - Preprocess and evaluate articles based on quality metrics.
-   - Store embeddings for efficient retrieval.
+   - Aggregate diverse news sources
+   - Preprocess and evaluate articles based on quality metrics
+   - Store embeddings for efficient retrieval
 
 ---
 
@@ -59,6 +59,12 @@ A lightweight and scalable AI-powered system designed to generate personalized n
 - [ ] Set up vector database for document retrieval
 - [ ] Implement personalization logic based on user preferences
 - [ ] Evaluate article quality and summarization effectiveness
+
+---
+
+## References
+
+- Ren, S., Jian, P., Ren, Z., Leng, C., Xie, C. and Zhang, J., 2025. Towards Scientific Intelligence: A Survey of LLM-based Scientific Agents. arXiv preprint arXiv:2503.24047.
 
 ---
 
