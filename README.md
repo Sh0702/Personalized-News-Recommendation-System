@@ -39,6 +39,8 @@ A lightweight and scalable AI-powered system designed to generate personalized n
 ## 📁 Project Structure (Proposed)
 
 
+
+
 ---
 
 ## 🛠 Tech Stack
@@ -57,12 +59,6 @@ A lightweight and scalable AI-powered system designed to generate personalized n
 - [ ] Set up vector database for document retrieval
 - [ ] Implement personalization logic based on user preferences
 - [ ] Evaluate article quality and summarization effectiveness
-
----
-
-## 📌 Contributing
-
-We welcome ideas, feedback, and collaboration! Please open an issue or submit a PR if you're interested.
 
 ---
 
